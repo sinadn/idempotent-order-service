@@ -1,0 +1,18 @@
+package ir.sinafood.orderservice.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import java.util.UUID;
+
+@Getter
+@AllArgsConstructor
+public class ProductResponse {
+
+    private UUID id;
+
+    private String name;
+
+    private String description;
+
+}
