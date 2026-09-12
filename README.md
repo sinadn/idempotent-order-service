@@ -1,6 +1,8 @@
 # Idempotent Order Service
 
-A Spring Boot backend service that demonstrates a reliable order creation flow with idempotency handling, database consistency, and concurrency control.
+A Spring Boot backend service that demonstrates a reliable order creation workflow with idempotency handling, database consistency, and concurrency control.
+
+---
 
 ## Overview
 
@@ -13,21 +15,22 @@ Duplicate requests can happen because of:
 - Client timeout and retry mechanisms
 - Distributed system failures
 
-Without proper handling, the same request may create multiple orders.
+Without proper handling, the same request may create multiple orders and cause data inconsistency.
 
-This project implements an idempotent order creation mechanism to guarantee that each request creates only one order.
+This project implements an idempotent order creation flow to guarantee that repeated requests create only one order.
 
 ---
 
-# Features
+# Key Features
 
 - Idempotent order creation using `Idempotency-Key`
-- Prevent duplicate orders caused by repeated requests
+- Prevent duplicate orders caused by repeated client requests
 - Database-level consistency using unique constraints
-- Allow only one `OPEN` order per user
+- Prevent multiple active orders for the same user
 - Transactional order and order item creation
-- Database migration management using Flyway
-- REST API implementation with Spring Boot
+- Database schema management using Flyway
+- RESTful API implementation with Spring Boot
+- Unit testing for critical business scenarios
 
 ---
 
